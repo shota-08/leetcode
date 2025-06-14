@@ -21,3 +21,9 @@ def test_flatten():
     solution.flatten(tree3)
     expected_tree3 = build_tree_from_list([])
     assert is_same_tree(tree3, expected_tree3)
+
+    # case:4
+    tree4 = build_tree_from_list([1,None,2,None,3])
+    solution.flatten(tree4)
+    expected_tree4 = build_tree_from_list([1,None,2,None,3])
+    assert is_same_tree(tree4, expected_tree4)
