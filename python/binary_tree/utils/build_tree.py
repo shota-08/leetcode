@@ -36,3 +36,14 @@ def is_same_tree(p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
     if not p or not q or p.val != q.val:
         return False
     return is_same_tree(p.left, q.left) and is_same_tree(p.right, q.right)
+
+
+def find_node(root: Optional[TreeNode], val):
+    if not root:
+        return None
+    if root.val == val:
+        return root
+    left_result = find_node(root.left, val)
+    if left_result:
+        return left_result
+    return find_node(root.right, val)
